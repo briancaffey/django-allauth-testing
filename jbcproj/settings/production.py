@@ -83,7 +83,7 @@ DATABASES = {
 import dj_database_url
 
 db_from_env = dj_database_url.config()
-DATABASES['default'].updated(db_from_env)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
