@@ -17,7 +17,13 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">Login</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="#">Welcome, {{ user.username }}</a></li>
+        <li><a href="{% url 'account_logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'account_login' %}">Login</a></li>
+        <li><a href="{% url 'account_signup' %}">Signup</a></li>
+        {% endif %}
       </ul>
     </div><!--/.nav-collapse -->
   </div>
