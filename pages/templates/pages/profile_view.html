@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h2>Connect with your other friends</h2>
+<br />
+
+{% for friend in target.data %}
+
+{{ friend.name }}<br />{{ friend.id }}
+
+{% endfor %}
+
+
+{% endblock %}
